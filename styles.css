@@ -269,16 +269,23 @@ body {
     display: block;    
 }
 
-#cat-links a {
-  text-decoration: none;
-  color: #666;
-  font-size: 0.875em;
-  line-height: 1.6;
-  font-family: sans-serif;
+#cat-links {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 5px;
+    margin-top: 1em;
+    clear: both;
 }
 
-#cat-links-a2 {
-  color: #0077bb !important;
+#cat-links {
+    text-decoration: none;
+    font-size: 0.875em;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+
+#cat-links-a1 {  
+    color: #666;  
 }
 
 /*div Main*/
@@ -290,17 +297,50 @@ body {
     background-color: #ffffff;
     border-width: 1px;
     border-style: solid;
-    border-color: #CCC #CCC #FFF;
+    border-color: #CCC #CCC #CCC;
     max-width: 60em;
 }
 /*footer*/
+#container-footer {
+    padding-top: 50px;
+    padding-bottom: 82px;
+    max-width: 90em;
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+}
+
+#div-footer {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footerid {
+    border-top: 1px solid #a2a9b1;
+    padding: 0.75em;
+    color: #333333;
+}
+
+#footerid ul {
+    list-style: none none;
+    margin: 0;
+    padding: 0;
+}
+
 #footerid ul li {
     line-height: 1.4;
-    list-style: none;
-    color: #202122;
-    margin: 0;
+    color: #202122;    
     padding: 0.5em 0;
     font-size: 0.75em;
+    font-family:sans-serif
+}
+
+#footer-places li {
+    float: left;
+    margin-right: 1em;
+    line-height: 2;
+    margin-right: 1em;
 }
 
 /*barra de pesquisa - lateral*/
@@ -330,4 +370,15 @@ body {
   font-size: 0.75em;
   line-height: 1.125em;
   word-wrap: break-word;
+}
+
+/*links da pagina*/
+.links a {
+    text-decoration: none;
+    color: #0077bb;
+}
+
+.links a:hover{
+    text-decoration: underline;    
+    color: #999999;
 }
