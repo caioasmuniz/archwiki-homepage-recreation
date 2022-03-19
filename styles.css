@@ -108,11 +108,12 @@ html > body #navbar-logo {
 #navbar-lista li a:hover {
   color: #ffffff;
 }
-
+.article {
+  padding: 0 15px;
+}
 /*Header*/
 #article-header {
-  margin: 10px 0 10px 0;
-  padding: 10px 0 10px 0;
+  margin: 5px 0 5px 0;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -192,7 +193,7 @@ html > body #navbar-logo {
 }
 
 /*Barra de navegacao conteudo*/
-#content-navbar {
+#tab-content {
   max-width: 60em;
   margin-left: auto;
   margin-right: auto;
@@ -206,12 +207,13 @@ html > body #navbar-logo {
 
 #content-navbar ul {
   list-style: none;
-  border: 1px solid #cccccc;
-  border-bottom-color: #ffffff;
   background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
 #content-navbar li {
+  border-right: 1px solid #cccccc;
   float: left;
   display: block;
   height: 100%;
@@ -238,6 +240,13 @@ html > body #navbar-logo {
   float: left;
   margin-left: 0;
 }
+#nav-left ul {
+  float: left;
+}
+#nav-right ul {
+  float: right;
+}
+
 #nav-right {
   float: right;
 }
@@ -264,7 +273,6 @@ html > body #navbar-logo {
 
 #content-main {
   margin-top: -1px;
-  padding: 1.25em 0.5em 1.5em;
   margin-left: 0;
 }
 
@@ -345,15 +353,17 @@ html > body #navbar-logo {
 
 /*div Main*/
 #div-main {
+  padding: 1.25em 0.5em 1.5em;
   margin-left: auto;
   margin-right: auto;
-  padding: 30px 10px;
   display: block;
   background-color: #ffffff;
   border-width: 1px;
   border-style: solid;
   border-color: #ccc #ccc #ccc;
   max-width: 60em;
+  clear: both;
+  margin-top: -1px;
 }
 /*footer*/
 #container-footer {
