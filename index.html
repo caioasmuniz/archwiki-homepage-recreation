@@ -29,7 +29,7 @@
 
   <div class="article">
     <header id="article-header">
-      <label class="navbar-buttons" id="sidebar-button"></label>
+      <label class="navbar-buttons" id="sidebar-button" onclick="toggleSidebar()"></label>
       <div id="searchbar">
         <label class="navbar-buttons" id="search-button"></label>
       </div>
@@ -233,6 +233,25 @@
       </div>
     </div>
   </div>
+  <script>
+    function toggleSidebar() {
+      let button = document.getElementById("sidebar-button")
+      let sidebar = document.getElementById("sidebar")
+      let divMain = document.getElementById("div-main")
+      let tab = document.getElementById("tab-content")
+
+      if (sidebar.style.display == "none") {
+        sidebar.style.display = "block"
+        divMain.style.marginLeft = "11.5em"
+        tab.style.marginLeft = "11.5em"
+      } else {
+        sidebar.style.display = "none"
+        divMain.style.marginLeft = "0"
+        tab.style.marginLeft = "0"
+
+      }
+    }
+  </script>
 </body>
 
 </html>
