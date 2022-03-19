@@ -13,19 +13,72 @@ body {
   border-bottom: 5px #08c solid;
 }
 
-#logo {
-  float: left;
-  margin: 0;
-  padding: 0;
-  height: 40px;
-  width: 190px;
+@media (max-width: 830px) {
+    #navbar ul li {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
-#logo img {
-  max-width: 100%;
-  max-height: 100%;
+@media (max-width: 680px){ 
+    #navbar ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        float: none;
+    }
 }
 
+@media (max-width: 680px) {
+    #navbar ul li {
+        padding: 0;
+        float: none;
+    }
+}
+
+@media (max-width: 830px) {
+    #home{
+        display: none;
+    }
+}
+
+/*logo*/
+html > body #navbar-logo {
+    background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archlogo.svg?29b1c") no-repeat;
+    background-size: 190px 40px;    
+}
+
+#navbar-logo {
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 190px;
+}
+
+#navbar-logo a{
+    display: block;
+    height: 40px;
+    width: 190px;
+}
+
+@media (max-width: 830px) {
+    html > body #navbar-logo {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 680px) {
+    html > body #navbar-logo {
+        width: 40px;
+        margin-right: 5px;
+        background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archicon.svg?0c6bc") no-repeat;
+        background-size: 40px 40px;
+    }
+}
+
+/*navlista*/
 #navbar-lista {
   display: inline;
   float: right;
