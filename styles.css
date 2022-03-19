@@ -13,7 +13,44 @@ body {
   border-bottom: 5px #08c solid;
 }
 
-#logo {
+@media (max-width: 830px) {
+  #navbar ul li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 680px) {
+  #navbar ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    float: none;
+  }
+}
+
+@media (max-width: 680px) {
+  #navbar ul li {
+    padding: 0;
+    float: none;
+  }
+}
+
+@media (max-width: 830px) {
+  #home {
+    display: none;
+  }
+}
+
+/*logo*/
+html > body #navbar-logo {
+  background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archlogo.svg?29b1c")
+    no-repeat;
+  background-size: 190px 40px;
+}
+
+#navbar-logo {
   float: left;
   margin: 0;
   padding: 0;
@@ -21,19 +58,29 @@ body {
   width: 190px;
 }
 
-@media (max-width: 680px) {
-  #logo {
-    background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archicon.svg?0c6bc");
+#navbar-logo a {
+  display: block;
+  height: 40px;
+  width: 190px;
+}
+
+@media (max-width: 830px) {
+  html > body #navbar-logo {
+    padding-right: 15px;
   }
 }
 
-#logo {
-  background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archlogo.svg?29b1c");
-  background-size: 190px 40px !important;
-  height: 40px !important;
-  width: 190px !important;
+@media (max-width: 680px) {
+  html > body #navbar-logo {
+    width: 40px;
+    margin-right: 5px;
+    background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archicon.svg?0c6bc")
+      no-repeat;
+    background-size: 40px 40px;
+  }
 }
 
+/*navlista*/
 #navbar-lista {
   display: inline;
   float: right;
@@ -146,17 +193,50 @@ body {
 
 /*Barra de navegacao conteudo*/
 #content-navbar {
-  margin-left: 11.5em;
   max-width: 60em;
+  margin-left: auto;
   margin-right: auto;
+}
+
+.content-navbar:after {
+  clear: both;
+  content: "";
+  display: block;
 }
 
 #content-navbar ul {
   list-style: none;
+  border: 1px solid #cccccc;
+  border-bottom-color: #ffffff;
+  background-color: #ffffff;
+}
+
+#content-navbar li {
+  float: left;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1.125em;
+  white-space: nowrap;
+}
+
+#content-navbar li a {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  height: 3.07692308em;
+  position: relative;
+  padding-top: 1.25em;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 0.8125em;
+  cursor: pointer;
 }
 
 #nav-left {
   float: left;
+  margin-left: 0;
 }
 #nav-right {
   float: right;
@@ -176,7 +256,16 @@ body {
 
 /*conteudo*/
 #content {
-  display: flex;
+  max-width: 90em;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#content-main {
+  margin-top: -1px;
+  padding: 1.25em 0.5em 1.5em;
+  margin-left: 0;
 }
 
 #content-main h1 {
@@ -210,6 +299,12 @@ body {
   font-family: sans-serif;
 }
 
+@media screen and (min-width: 721px) {
+  .archwiki-main-columns {
+    column-count: 2;
+  }
+}
+
 .archwiki-main-columns dt a {
   text-decoration: none;
   color: #0077bb;
@@ -224,28 +319,83 @@ body {
   font-size: 0.875em;
   line-height: 1.6;
   font-family: sans-serif;
+  margin-left: 1.6em;
+  margin-right: 0;
+  display: block;
 }
 
-#cat-links a {
+#cat-links {
+  border: 1px solid #a2a9b1;
+  background-color: #f8f9fa;
+  padding: 5px;
+  margin-top: 1em;
+  clear: both;
+}
+
+#cat-links {
   text-decoration: none;
-  color: #666;
   font-size: 0.875em;
   line-height: 1.6;
   font-family: sans-serif;
 }
 
-#cat-links-a2 {
-  color: #0077bb !important;
+#cat-links-a1 {
+  color: #666;
 }
 
+/*div Main*/
+#div-main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 10px;
+  display: block;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #ccc #ccc;
+  max-width: 60em;
+}
 /*footer*/
+#container-footer {
+  padding-top: 50px;
+  padding-bottom: 82px;
+  max-width: 90em;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#div-footer {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footerid {
+  border-top: 1px solid #a2a9b1;
+  padding: 0.75em;
+  color: #333333;
+}
+
+#footerid ul {
+  list-style: none none;
+  margin: 0;
+  padding: 0;
+}
+
 #footerid ul li {
   line-height: 1.4;
-  list-style: none;
   color: #202122;
-  margin: 0;
   padding: 0.5em 0;
   font-size: 0.75em;
+  font-family: sans-serif;
+}
+
+#footer-places li {
+  float: left;
+  margin-right: 1em;
+  line-height: 2;
+  margin-right: 1em;
 }
 
 /*barra de pesquisa - lateral*/
@@ -275,4 +425,15 @@ body {
   font-size: 0.75em;
   line-height: 1.125em;
   word-wrap: break-word;
+}
+
+/*links da pagina*/
+.links a {
+  text-decoration: none;
+  color: #0077bb;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #999999;
 }
