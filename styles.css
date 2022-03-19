@@ -21,9 +21,17 @@ body {
   width: 190px;
 }
 
-#logo img {
-  max-width: 100%;
-  max-height: 100%;
+@media (max-width: 680px) {
+  #logo {
+    background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archicon.svg?0c6bc");
+  }
+}
+
+#logo {
+  background: url("https://wiki.archlinux.org/extensions/ArchLinux/modules/archnavbar/archlogo.svg?29b1c");
+  background-size: 190px 40px !important;
+  height: 40px !important;
+  width: 190px !important;
 }
 
 #navbar-lista {
