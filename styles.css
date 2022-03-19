@@ -235,6 +235,7 @@ html > body #navbar-logo {
   padding-right: 8px;
   font-size: 0.8125em;
   cursor: pointer;
+  background-color: #f8f9fa;
 }
 
 @media (max-width: 830px) {
@@ -332,6 +333,16 @@ html > body #navbar-logo {
   .archwiki-main-columns {
     column-count: 2;
   }
+}
+
+@media screen and (min-width: 721px) {
+    .archwiki-main-columns > * {
+        page-break-inside: avoid;
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .archwiki-main-columns dt a {
