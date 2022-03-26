@@ -109,11 +109,15 @@ html > body #navbar-logo {
   color: #ffffff;
 }
 .article {
-  padding: 0 15px;
+    padding: 0 15px;
+    max-width: 103.125em;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;    
 }
 /*Header*/
 #article-header {
-  margin: 5px 0 5px 0;
+  margin: 15px 0 5px 0;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -121,7 +125,7 @@ html > body #navbar-logo {
 }
 
 .navbar-buttons {
-  padding: 12px;
+  padding: 12px 0px 12px 0px;
   display: block;
   min-width: 20px;
   min-height: 20px;
@@ -130,16 +134,23 @@ html > body #navbar-logo {
 }
 
 #search-button {
-  background-image: url("https://wiki.archlinux.org/load.php?modules=skins.vector.icons&image=search&format=original&skin=vector&version=14c6t");
-  position: absolute;
-  top: 0;
-  left: 155px;
-  min-height: 20px;
-  height: 100%;
-  min-width: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url("https://wiki.archlinux.org/load.php?modules=skins.vector.icons&image=search&format=original&skin=vector&version=14c6t");
+    position: absolute;
+    top: 0;
+    margin-left: 8px;
+    min-height: 20px;
+    height: 100%;
+    min-width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 680px) {
+    #search-button {
+        margin-left: 180px;
+    }
+}
+
 
 #sidebar-button {
   background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E menu %3C/title%3E %3Cpath d=%22M1 3v2h18V3zm0 8h18V9H1zm0 6h18v-2H1z%22/%3E %3C/svg%3E");
@@ -152,15 +163,15 @@ html > body #navbar-logo {
 }
 
 #searchbar {
-  float: left;
-  margin-left: 105px;
-  margin-right: 0.75em;
-  box-sizing: border-box;
-  flex-grow: 1;
+    float: left;
+    margin-left: 67px;
+    margin-right: 0.75em;
+    box-sizing: border-box;
+    flex-grow: 1;
 }
 
 #barra-pesquisa {
-  width: 500px;
+  width: 450px;
   margin: 0;
   border-width: 1px;
   border-style: solid;
@@ -180,12 +191,19 @@ html > body #navbar-logo {
   white-space: nowrap;
   padding: 5px 12px;
 }
+
+@media screen and (max-width: 680px) {
+    #create-account {
+        display: none;
+    }
+}
+
 #create-account a {
   color: #0077bb;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: bold;
-  font-family: inherit;
+  font-family: sans-serif;
 }
 
 #create-account a:hover {
