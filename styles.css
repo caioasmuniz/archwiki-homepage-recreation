@@ -173,10 +173,9 @@ html > body #navbar-logo {
 #barra-pesquisa {
   width: 450px;
   margin: 0;
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid #a2a9b1;  
   border-radius: 2px;
-  padding: 5px 8px 5px 36px;
+  padding: 8px 8px 8px 36px;
   font-family: sans-serif;
   font-size: 14px;
 }
@@ -227,11 +226,11 @@ html > body #navbar-logo {
   background-color: #ffffff;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
-#content-navbar li {
-  border-right: 1px solid #cccccc;
-  float: left;
+#content-navbar li {  
+  float:left;
   display: block;
   height: 100%;
   margin: 0;
@@ -242,20 +241,26 @@ html > body #navbar-logo {
 
 #content-navbar li a {
   box-sizing: border-box;
-  display: block;
-  float: left;
-  height: 3.07692308em;
-  position: relative;
+  display: block;  
+  height: 3.07692308em;  
   padding-top: 1.25em;
   padding-left: 8px;
   padding-right: 8px;
   font-size: 0.8125em;
-  cursor: pointer;
-  background-color: #f8f9fa;
+  cursor: pointer;  
+}
+
+.tabs-nosel {
+    background-image: linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);
+    background-repeat: no-repeat;
+    background-size: 1px 100%;
+    background-position: right bottom;
+    border-bottom: 1px solid #cccccc;
+    background-color: #f8f9fa;
 }
 
 @media (max-width: 830px) {
-  html > body #content-navbar li a {
+    html > body #content-navbar li a {
     box-sizing: border-box;
     display: block;
     float: left;
@@ -269,23 +274,33 @@ html > body #navbar-logo {
   }
 }
 
+.tabs-select {
+    border: 1px solid #cccccc;
+    border-bottom-color: #ffffff;    
+    background: #ffffff;
+}
+
+.menu-tabs {
+    float: left;
+    height: 39px;    
+}
+
 #readbt {
-  font-weight: normal;
-  border-left: 1px solid #a2a9b1;
+    font-weight: normal;
+    border-left: 1px solid #a2a9b1;
 }
 
 #nav-left {
-  float: left;
-  margin-left: 0;
-}
-#nav-left ul {
-  float: left;
-}
-#nav-right ul {
-  float: right;
+    margin-left: 0;
+    float: left;
 }
 
 #nav-right {
+    margin-right: 1px;
+    float: right;
+}
+
+#nav-right ul {
   float: right;
 }
 
@@ -401,7 +416,7 @@ html > body #navbar-logo {
 
 /*div Main*/
 #div-main {
-  padding: 1.25em 0.5em 1.5em;
+  padding: 1.25em 0.4em 1.5em;
   margin-left: auto;
   margin-right: auto;
   display: block;
