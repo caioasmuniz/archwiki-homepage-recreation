@@ -1,6 +1,15 @@
 var email = document.getElementById('inputLog');
 var pw = document.getElementById('inputSenha');
 
+function showLogin(){    
+    var x = document.getElementById("loginPage");
+
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
 
 function getLogin(){
     axios.get('https://reqres.in/api/users/2')
