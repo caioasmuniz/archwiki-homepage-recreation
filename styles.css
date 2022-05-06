@@ -545,7 +545,7 @@ html > body #navbar-logo {
   display: column;
 }
 
-#btnEntrar{
+.btnLogin{
   background-color: #3366cc;
   color: #fff;
   font-family: sans-serif;
@@ -556,7 +556,7 @@ html > body #navbar-logo {
   padding: 5px 15px;
 }
 
-#inputLogin{
+.inputLogin{
   margin-top: 5px;
   padding: 3px;
 }
