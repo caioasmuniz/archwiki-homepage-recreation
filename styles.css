@@ -564,3 +564,9 @@ html > body #navbar-logo {
 #showLogin{
   margin-top: 30px;
 }
+
+#divShowLogin{
+  max-width: 61em;
+  margin-left: auto;
+  margin-right: auto;
+}
