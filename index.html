@@ -215,19 +215,24 @@
         </main>
       </div>
     </div>
-    <div id="loginPage">
+    <button id="showLogin" type="button" class="btnLogin" onclick="showLogin()">LOGIN</button>
+    <div style="display: none;" id="loginPage">
       <h1 id="main-heading">Login</h1>
-      <div id="divForm">        
+      <div id="divForm"> 
+        <form>      
           <label for="Login">Login</label>
           <div>
-            <input type="text" id="inputLog" class="inputLogin"><br><br>
+            <input type="text" id="inputLog" class="inputLogin" value=""><br><br>
           </div>
           <label for="Senha">Senha</label>
           <div>
-            <input type="text" id="inputSenha" class="inputLogin"><br><br>
+            <input type="text" id="inputSenha" class="inputLogin" value=""><br><br>
           </div>
-          <button id="getLogin" class="btnLogin" type="submit">Get Login</button>
-          <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
+        </form>
+        <button type="button" class="btnLogin" onclick="getLogin()">Get Login</button>        
+        <button type="button" class="btnLogin" onclick="store()">Cadastrar</button>
+        <button type="button" class="btnLogin" onclick="processLogin()">Logar</button>
+        <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
       </div>
     </div>
     <div id="container-footer">

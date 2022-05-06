@@ -560,3 +560,7 @@ html > body #navbar-logo {
   margin-top: 5px;
   padding: 3px;
 }
+
+#showLogin{
+  margin-top: 30px;
+}
