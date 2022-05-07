@@ -23,7 +23,7 @@ function register() {
     }),
   })
     .then((res) => res.json())
-    .then((json) => console.log(json));
+    .then((json) => setTokenInCookie(json.token));
 }
 
 function login() {
@@ -38,14 +38,13 @@ function login() {
     }),
   })
     .then((res) => res.json())
-    .then((json) => console.log(json));
+    .then((json) => setTokenInCookie(json.token));
 }
 
 function getLoginFromReqRes() {
   fetch("https://reqres.in/api/users/2")
     .then((res) => res.json())
     .then((json) => {
-      console.log(json)
       email.setAttribute("value", json.data.email);
       pw.setAttribute("value", json.data.first_name);
     });
@@ -56,7 +55,8 @@ function setTokenInCookie(token) {
 }
 
 function getTokenFromCookie() {
-  return document.cookie.split("=")[1];
+  cookie = document.cookie.split("=")
+  return (cookie[0] === "loginToken") ? cookie[1] : undefined
 }
 
 function processLogin() {
@@ -79,3 +79,5 @@ function processLogin() {
     alert("nao logado");
   }
 }
+
+// ocument.onload(getTokenFromCookie() ? )
