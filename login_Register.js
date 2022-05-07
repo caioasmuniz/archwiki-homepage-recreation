@@ -11,6 +11,23 @@ function showLogin() {
   }
 }
 
+function register() {
+  fetch("https://reqres.in/api/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: "janet.weaver@reqres.in",
+      password: "pistol",
+      // email: email.getAttribute("value"),
+      // password: pw.getAttribute("value"),
+    })
+  })
+    .then(res => res.json())
+    .then(json => console.log(json))
+}
+
 function getLogin() {
   axios.get("https://reqres.in/api/users/2").then(function (res) {
     var data = res.data.data;
