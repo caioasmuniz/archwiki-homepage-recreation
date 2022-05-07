@@ -51,10 +51,12 @@ function getLoginFromReqRes() {
     });
 }
 
-function store() {
-  localStorage.setItem("email", email.value);
-  localStorage.setItem("pw", pw.value);
-  alert("Cadastro realizado");
+function setTokenInCookie(token) {
+  document.cookie = "loginToken=" + token;
+}
+
+function getTokenFromCookie() {
+  return document.cookie.split("=")[1];
 }
 
 function processLogin() {
