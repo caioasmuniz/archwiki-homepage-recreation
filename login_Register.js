@@ -26,6 +26,21 @@ function register() {
     .then((json) => console.log(json));
 }
 
+function login() {
+  fetch("https://reqres.in/api/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email.getAttribute("value"),
+      password: pw.getAttribute("value"),
+    }),
+  })
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+}
+
 function getLogin() {
   fetch("https://reqres.in/api/users/2")
     .then((res) => res.json())
