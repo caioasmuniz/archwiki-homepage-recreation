@@ -18,14 +18,12 @@ function register() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      email: "janet.weaver@reqres.in",
-      password: "pistol",
-      // email: email.getAttribute("value"),
-      // password: pw.getAttribute("value"),
-    })
+      email: email.getAttribute("value"),
+      password: pw.getAttribute("value"),
+    }),
   })
-    .then(res => res.json())
-    .then(json => console.log(json))
+    .then((res) => res.json())
+    .then((json) => console.log(json));
 }
 
 function getLogin() {
