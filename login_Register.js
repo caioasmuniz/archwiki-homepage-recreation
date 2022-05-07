@@ -27,14 +27,13 @@ function register() {
 }
 
 function getLogin() {
-  axios.get("https://reqres.in/api/users/2").then(function (res) {
-    var data = res.data.data;
-    console.log(res);
-    document.getElementById("inputLog").setAttribute("value", data.email);
-    document
-      .getElementById("inputSenha")
-      .setAttribute("value", data.first_name + data.last_name);
-  });
+  fetch("https://reqres.in/api/users/2")
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json)
+      email.setAttribute("value", json.data.email);
+      pw.setAttribute("value", json.data.first_name);
+    });
 }
 
 function store() {
