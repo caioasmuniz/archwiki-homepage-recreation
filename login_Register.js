@@ -41,7 +41,7 @@ function login() {
     .then((json) => console.log(json));
 }
 
-function getLogin() {
+function getLoginFromReqRes() {
   fetch("https://reqres.in/api/users/2")
     .then((res) => res.json())
     .then((json) => {
