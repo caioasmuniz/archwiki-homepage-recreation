@@ -224,16 +224,16 @@
         <form>
           <label for="Login">Login</label>
           <div>
-            <input type="text" id="inputLog" class="inputLogin" value=""><br><br>
+            <input type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
           </div>
           <label for="Senha">Senha</label>
           <div>
-            <input type="password" id="inputSenha" class="inputLogin" value=""><br><br>
+            <input type="password" minlength="4" id="inputSenha" class="inputLogin" value=""><br><br>
           </div>
         </form>
-        <button type="button" class="btnLogin" onclick="getLogin()">Get Login</button>
-        <button type="button" class="btnLogin" onclick="store()">Cadastrar</button>
-        <button type="button" class="btnLogin" onclick="processLogin()">Logar</button>
+        <button type="button" class="btnLogin" onclick="getLoginFromReqRes()">Get Login</button>
+        <button type="button" class="btnLogin" onclick="register()">Cadastrar</button>
+        <button type="button" class="btnLogin" onclick="login()">Logar</button>
         <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
       </div>
     </div>
