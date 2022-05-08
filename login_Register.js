@@ -57,7 +57,7 @@ function getLoginFromReqRes() {
 }
 
 function setTokenInCookie(token) {
-  token ? document.cookie = "loginToken=" + token : token 
+  token ? (document.cookie = "loginToken=" + token) : token;
 }
 
 function getTokenFromCookie() {
@@ -65,27 +65,6 @@ function getTokenFromCookie() {
   return cookie[0] === "loginToken" && cookie[1] != undefined
     ? cookie[1]
     : undefined;
-}
-
-function processLogin() {
-  // valores registrados
-  var storedName = localStorage.getItem("email");
-  var storedPw = localStorage.getItem("pw");
-
-  // valores nos Inputs
-  var userName = document.getElementById("inputLog");
-  var userPw = document.getElementById("inputSenha");
-
-  if (
-    userName.value == storedName &&
-    userPw.value == storedPw &&
-    userName.value != "" &&
-    userPw.value != ""
-  ) {
-    alert("Você logou");
-  } else {
-    alert("nao logado");
-  }
 }
 
 window.onload = () => {
