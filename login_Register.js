@@ -23,7 +23,10 @@ function register() {
     }),
   })
     .then((res) => res.json())
-    .then((json) => setTokenInCookie(json.token));
+    .then((json) => {
+      if (json.error) alert(json.error);
+      else setTokenInCookie(json.token);
+    });
 }
 
 function login() {
@@ -38,7 +41,10 @@ function login() {
     }),
   })
     .then((res) => res.json())
-    .then((json) => setTokenInCookie(json.token));
+    .then((json) => {
+      if (json.error) alert(json.error);
+      else setTokenInCookie(json.token);
+    });
 }
 
 function getLoginFromReqRes() {
