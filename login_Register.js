@@ -1,6 +1,7 @@
 var email = document.getElementById("inputLog");
 var pw = document.getElementById("inputSenha");
 var loginPage = document.getElementById("loginPage");
+const cep = document.querySelector("#cep");
 
 function showLogin() {
   loginPage.style.display =
@@ -77,3 +78,20 @@ window.onload = () => {
     showLoggedInPage();
   }
 };
+
+
+function search(){  
+  var query = document.querySelector('input').value;
+  const options = {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'default'
+  }
+
+  fetch(`http://universities.hipolabs.com/search?name=${query}`, options)
+    .then(response => {
+      response.json()
+      .then(data => console.log(data) )
+    })
+  
+}
