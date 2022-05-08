@@ -55,7 +55,7 @@ function getLoginFromReqRes() {
 function logUserIn(token) {
   if (token) {
     document.cookie = "loginToken=" + token;
-    showLoggedInPage()
+    showLoggedInPage();
   }
 }
 
@@ -77,3 +77,11 @@ window.onload = () => {
     showLoggedInPage();
   }
 };
+
+function search(query) {
+  let url = new URL("http://universities.hipolabs.com/search");
+  url.searchParams.set( "name", query );
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {return json});
+}
