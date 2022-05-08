@@ -1,14 +1,10 @@
 var email = document.getElementById("inputLog");
 var pw = document.getElementById("inputSenha");
+var loginPage = document.getElementById("loginPage");
 
 function showLogin() {
-  var x = document.getElementById("loginPage");
-
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+  loginPage.style.display =
+    loginPage.style.display === "none" ? "block" : "none";
 }
 
 function register() {
@@ -65,6 +61,10 @@ function getTokenFromCookie() {
   return cookie[0] === "loginToken" && cookie[1] != undefined
     ? cookie[1]
     : undefined;
+}
+
+function showLoggedInPage() {
+  loginPage;
 }
 
 window.onload = () => {
