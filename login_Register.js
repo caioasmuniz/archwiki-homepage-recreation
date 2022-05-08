@@ -51,12 +51,14 @@ function getLoginFromReqRes() {
 }
 
 function setTokenInCookie(token) {
-  document.cookie = "loginToken=" + token;
+  token ? document.cookie = "loginToken=" + token : token 
 }
 
 function getTokenFromCookie() {
-  cookie = document.cookie.split("=")
-  return (cookie[0] === "loginToken") ? cookie[1] : undefined
+  cookie = document.cookie.split("=");
+  return cookie[0] === "loginToken" && cookie[1] != undefined
+    ? cookie[1]
+    : undefined;
 }
 
 function processLogin() {
@@ -80,4 +82,8 @@ function processLogin() {
   }
 }
 
-// ocument.onload(getTokenFromCookie() ? )
+window.onload = () => {
+  if (getTokenFromCookie()) {
+    alert("usuário logado");
+  }
+};
