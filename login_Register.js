@@ -21,7 +21,7 @@ function register() {
     .then((res) => res.json())
     .then((json) => {
       if (json.error) alert(json.error);
-      else setTokenInCookie(json.token);
+      else logUserIn(json.token);
     });
 }
 
@@ -39,7 +39,7 @@ function login() {
     .then((res) => res.json())
     .then((json) => {
       if (json.error) alert(json.error);
-      else setTokenInCookie(json.token);
+      else logUserIn(json.token);
     });
 }
 
@@ -52,8 +52,11 @@ function getLoginFromReqRes() {
     });
 }
 
-function setTokenInCookie(token) {
-  token ? (document.cookie = "loginToken=" + token) : token;
+function logUserIn(token) {
+  if (token) {
+    document.cookie = "loginToken=" + token;
+    showLoggedInPage()
+  }
 }
 
 function getTokenFromCookie() {
@@ -64,11 +67,13 @@ function getTokenFromCookie() {
 }
 
 function showLoggedInPage() {
-  loginPage;
+  loginPage.style.display = "none";
+  document.getElementById("loggedInPage").style.display = "block";
+  document.getElementById("divShowLogin").style.display = "none";
 }
 
 window.onload = () => {
   if (getTokenFromCookie()) {
-    alert("usuário logado");
+    showLoggedInPage();
   }
 };

@@ -218,7 +218,7 @@
       <button id="showLogin" type="button" class="btnLogin" onclick="showLogin()">LOGIN</button>
     </div>
     <div style="display: none;" id="loginPage">
-      <h1 id="main-heading">Login</h1>
+      <h1>Login</h1>
       <div id="divForm">
         <form>
           <label for="Login">Login</label>
@@ -235,6 +235,14 @@
         <button type="button" class="btnLogin" onclick="login()">Logar</button>
         <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
       </div>
+    </div>
+    <div id="loggedInPage" style="display: none;" >
+      <h1>Voce está logado</h1>
+      <label>Buscar:</label>
+      <div>
+        <input type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
+      </div>
+    
     </div>
     <div id="container-footer">
       <div id="div-footer">
