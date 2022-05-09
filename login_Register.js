@@ -1,7 +1,6 @@
 var email = document.getElementById("inputLog");
 var pw = document.getElementById("inputSenha");
 var loginPage = document.getElementById("loginPage");
-const cep = document.querySelector("#cep");
 
 function showLogin() {
   loginPage.style.display =
