@@ -240,23 +240,22 @@
       <h1>Buscar Universidades</h1>
       <label>Buscar:</label>
       <div>
-        <input type="text" id="inputLog" class="inputLogin" id="busca" value=""><br><br>
-        <button type="button" class="btnLogin" onclick="search()">Buscar</button>
+        <input type="text" class="inputLogin" id="busca"><br><br>
+        <button type="button" class="btnLogin" onclick="search()">Buscar</button>                      
+        </script>
       </div>
     </div>
-    <div>
+    <div style="display: none;" id="resultPage">
       <div class="form-group">
-        <label for="">Nome</label><br>
-      </div>
-      <div class="form-group">
-        <label for="">País</label><br>
-      </div>
-      <div class="form-group">
-        <label for="">Domínio</label><br>
-      </div>
-      <div class="form-group">
-        <label for="">Página Web</label><br>
-      </div>      
+        <label class="resultLabel">Nome</label>
+        <li id="Nome" class="classLi"></li>        
+        <label class="resultLabel">País</label>
+        <li id="Pais" class="classLi"></li>
+        <label class="resultLabel">Domínio</label>
+        <li id="Dominio" class="classLi"></li>
+        <label class="resultLabel">Página Web</label>
+        <li id="PaginaWeb" class="classLi"></li>
+      </div>          
     </div>
 
     </form>
