@@ -81,12 +81,11 @@ window.onload = () => {
 
 function search() {   
     var query = document.getElementById('busca').value;
-    console.log(query)
     let url = new URL("http://universities.hipolabs.com/search");
     url.searchParams.set( "name", query );
     fetch(url)
       .then((res) => res.json())
-      .then((json) => {console.log(json)
+      .then((json) => {
         document.getElementById("Nome").innerHTML = json[0].name;
         document.getElementById("Pais").innerHTML = json[0].country;
         document.getElementById("Dominio").innerHTML = json[0].domains[0];
