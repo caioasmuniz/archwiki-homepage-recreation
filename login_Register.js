@@ -8,55 +8,68 @@ function showLogin() {
 }
 
 function ValidateUser(inputText, inputSenha){
+  let error = false;
   const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if(!inputText.value.match(re) || inputText.value.length < 3){
+    document.getElementById("invalidEmail").style.display = "block";
+    error = true;
+  }
   if(inputSenha.value.length < 3){
     document.getElementById("invalidPw").style.display = "block";
+    error = true;
   }
-  if(!inputText.value.match(re)){
-    document.getElementById("invalidEmail").style.display = "block";
-  }
-  else{    
-    register();
-  }
-}
-
-function register() {
-  document.getElementById("invalidPw").style.display = "none";
-  document.getElementById("invalidEmail").style.display = "none";
   
-  fetch("https://reqres.in/api/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email: email.getAttribute("value"),
-      password: pw.getAttribute("value"),
-    }),
-  })
-    .then((res) => res.json())
-    .then((json) => {
-      if (json.error) alert(json.error);
-      else logUserIn(json.token);
-    });    
+  return error;
 }
 
-function login() {
-  fetch("https://reqres.in/api/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email: email.getAttribute("value"),
-      password: pw.getAttribute("value"),
-    }),
-  })
-    .then((res) => res.json())
-    .then((json) => {
-      if (json.error) alert(json.error);
-      else logUserIn(json.token);
-    });
+function register(inputText, inputSenha) {
+  var aux = ValidateUser(inputText, inputSenha);
+
+  if(aux == false){
+    document.getElementById("invalidPw").style.display = "none";
+    document.getElementById("invalidEmail").style.display = "none";
+    
+    fetch("https://reqres.in/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.getAttribute("value"),
+        password: pw.getAttribute("value"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.error) alert(json.error);
+        else logUserIn(json.token);
+      }); 
+  }   
+}
+
+function login(inputText, inputSenha) {
+  var aux = ValidateUser(inputText, inputSenha);
+  
+  if(aux == false){
+    document.getElementById("invalidPw").style.display = "none";
+    document.getElementById("invalidEmail").style.display = "none";
+
+    fetch("https://reqres.in/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.getAttribute("value"),
+        password: pw.getAttribute("value"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.error) alert(json.error);
+        else logUserIn(json.token);
+      });
+  }
 }
 
 function getLoginFromReqRes() {
