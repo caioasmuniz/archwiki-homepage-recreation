@@ -602,3 +602,12 @@ html > body #navbar-logo {
   font-size: 1.2em;
   font-weight: bold;
 }
+
+.errorMsg{
+  list-style: none;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
