@@ -220,20 +220,26 @@
     <div style="display: none;" id="loginPage">
       <h1>Login</h1>
       <div id="divForm">
-        <form>
+        <form name="form1">
           <label for="Login">Login</label>
           <div>
             <input type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
           </div>
+          <div style="display: none;" id="invalidEmail">
+            <li class="errorMsg">Email inválido</li>
+          </div>
           <label for="Senha">Senha</label>
           <div>
-            <input type="password" minlength="4" id="inputSenha" class="inputLogin" value=""><br><br>
+            <input type="password" minlength="3" id="inputSenha" class="inputLogin" value=""><br><br>
           </div>
+          <div style="display: none;" id="invalidPw">
+            <li class="errorMsg">A senha deve ter mais de 3 caracteres</li>
+          </div>
+          <button type="button" class="btnLogin" onclick="getLoginFromReqRes()">Get Login</button>
+          <button type="button" class="btnLogin" onclick="ValidateUser(document.form1.inputLog, document.form1.inputSenha)">Cadastrar</button>
+          <button type="button" class="btnLogin" onclick="login()">Logar</button>
+          <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
         </form>
-        <button type="button" class="btnLogin" onclick="getLoginFromReqRes()">Get Login</button>
-        <button type="button" class="btnLogin" onclick="register()">Cadastrar</button>
-        <button type="button" class="btnLogin" onclick="login()">Logar</button>
-        <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
       </div>
     </div>
     <div id="loggedInPage" style="display: none;" >
