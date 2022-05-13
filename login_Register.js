@@ -7,7 +7,23 @@ function showLogin() {
     loginPage.style.display === "none" ? "block" : "none";
 }
 
+function ValidateUser(inputText, inputSenha){
+  const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if(inputSenha.value.length < 3){
+    document.getElementById("invalidPw").style.display = "block";
+  }
+  if(!inputText.value.match(re)){
+    document.getElementById("invalidEmail").style.display = "block";
+  }
+  else{    
+    register();
+  }
+}
+
 function register() {
+  document.getElementById("invalidPw").style.display = "none";
+  document.getElementById("invalidEmail").style.display = "none";
+  
   fetch("https://reqres.in/api/register", {
     method: "POST",
     headers: {
@@ -22,7 +38,7 @@ function register() {
     .then((json) => {
       if (json.error) alert(json.error);
       else logUserIn(json.token);
-    });
+    });    
 }
 
 function login() {
