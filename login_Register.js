@@ -7,50 +7,51 @@ function showLogin() {
     loginPage.style.display === "none" ? "block" : "none";
 }
 
-function ValidateUser(inputText, inputSenha){
+function ValidateUser(inputText, inputSenha) {
   let error = false;
-  const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  if(!inputText.value.match(re) || inputText.value.length < 3){
+  const re =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if (!inputText.value.match(re) || inputText.value.length < 3) {
     document.getElementById("invalidEmail").style.display = "block";
     error = true;
   }
-  if(inputSenha.value.length < 3){
+  if (inputSenha.value.length < 3) {
     document.getElementById("invalidPw").style.display = "block";
     error = true;
   }
-  
+
   return error;
 }
 
 function register(inputText, inputSenha) {
   var aux = ValidateUser(inputText, inputSenha);
 
-  if(aux == false){
+  if (aux == false) {
     document.getElementById("invalidPw").style.display = "none";
     document.getElementById("invalidEmail").style.display = "none";
-    
+
     fetch("https://reqres.in/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email.getAttribute("value"),
-        password: pw.getAttribute("value"),
+        email: email.value,
+        password: pw.value,
       }),
     })
       .then((res) => res.json())
       .then((json) => {
         if (json.error) alert(json.error);
         else logUserIn(json.token);
-      }); 
-  }   
+      });
+  }
 }
 
 function login(inputText, inputSenha) {
   var aux = ValidateUser(inputText, inputSenha);
-  
-  if(aux == false){
+
+  if (aux == false) {
     document.getElementById("invalidPw").style.display = "none";
     document.getElementById("invalidEmail").style.display = "none";
 
@@ -60,8 +61,8 @@ function login(inputText, inputSenha) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email.getAttribute("value"),
-        password: pw.getAttribute("value"),
+        email: email.value,
+        password: pw.value,
       }),
     })
       .then((res) => res.json())
@@ -105,18 +106,19 @@ window.onload = () => {
   if (getTokenFromCookie()) {
     showLoggedInPage();
   }
-}
+};
 
-function search() {   
-    var query = document.getElementById('busca').value;
-    let url = new URL("http://universities.hipolabs.com/search");
-    url.searchParams.set( "name", query );
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => {
-        document.getElementById("Nome").innerHTML = json[0].name;
-        document.getElementById("Pais").innerHTML = json[0].country;
-        document.getElementById("Dominio").innerHTML = json[0].domains[0];
-        document.getElementById("PaginaWeb").innerHTML = json[0].web_pages[0];
-        document.getElementById("resultPage").style.display = "block";});
+function search() {
+  var query = document.getElementById("busca").value;
+  let url = new URL("http://universities.hipolabs.com/search");
+  url.searchParams.set("name", query);
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      document.getElementById("Nome").innerHTML = json[0].name;
+      document.getElementById("Pais").innerHTML = json[0].country;
+      document.getElementById("Dominio").innerHTML = json[0].domains[0];
+      document.getElementById("PaginaWeb").innerHTML = json[0].web_pages[0];
+      document.getElementById("resultPage").style.display = "block";
+    });
 }
