@@ -1,2 +1,294 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+  <div id="navbar">
+    <div id="navbar-logo">
+      <a id="logo"></a>
+    </div>
+    <div id="navbar-menu">
+      <ul id="navbar-lista">
+        <li id="home"><a href="">Home</a></li>
+        <li><a href="">Packages</a></li>
+        <li><a href="">Forums</a></li>
+        <li><a href="">Wiki</a></li>
+        <li><a href="">Bugs</a></li>
+        <li><a href="">Security</a></li>
+        <li><a href="">AUR</a></li>
+        <li><a href="">Download</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article">
+    <header id="article-header">
+      <label class="navbar-buttons" id="sidebar-button" onclick="toggleSidebar()"></label>
+      <div id="searchbar">
+        <label id="search-button"></label>
+        <input id="barra-pesquisa" placeholder="Search ArchWiki" />
+      </div>
+      <div id="user-links">
+        <nav id="create-account">
+          <a href="">Create account</a>
+        </nav>
+        <label class="navbar-buttons" id="logout"></label>
+      </div>
+    </header>
+    <div id="content">
+      <div id="content-navigation">
+        <div id="sidebar">
+          <nav class="sidebar-block">
+            <ul>
+              <li><a href=""><span>Getting involved</span></a></li>
+              <li><a href=""><span>Wiki news</span></a></li>
+              <li><a href=""><span>Random page</span></a></li>
+            </ul>
+          </nav>
+          <nav class="sidebar-block">
+            <h3 class="sidebar-section-tittle">Interaction</h3>
+            <ul>
+              <li><a href=""><span>Help</span></a></li>
+              <li><a href=""><span>Contributing</span></a></li>
+              <li><a href=""><span>Recent changes</span></a></li>
+              <li><a href=""><span>Recent talks</span></a></li>
+              <li><a href=""><span>New Pages</span></a></li>
+              <li><a href=""><span>Statistics</span></a></li>
+              <li><a href=""><span>Requests</span></a></li>
+            </ul>
+          </nav>
+          <nav class="sidebar-block">
+            <h3 class="sidebar-section-tittle">Tools</h3>
+            <ul>
+              <li><a href=""><span>What links here</span></a></li>
+              <li><a href=""><span>Related changes</span></a></li>
+              <li><a href=""><span>Special pages</span></a></li>
+              <li><a href=""><span>Printable version</span></a></li>
+              <li><a href=""><span>Permanent link</span></a></li>
+              <li><a href=""><span>Page information</span></a></li>
+            </ul>
+          </nav>
+          <nav class="sidebar-block">
+            <h3 class="sidebar-section-tittle">In other languages</h3>
+            <ul>
+              <li><a href=""><span>Български</span></a></li>
+              <li><a href=""><span>Bosanski</span></a></li>
+              <li><a href=""><span>Čeština</span></a></li>
+              <li><a href=""><span>Dansk</span></a></li>
+              <li><a href=""><span>Deutsch</span></a></li>
+              <li><a href=""><span>Ελληνικά</span></a></li>
+              <li><a href=""><span>Español</span></a></li>
+              <li><a href=""><span>Suomi</span></a></li>
+              <li><a href=""><span>Français</span></a></li>
+              <li><a href=""><span>עברית</span></a></li>
+              <li><a href=""><span>Hrvatski</span></a></li>
+              <li><a href=""><span>Magyar</span></a></li>
+              <li><a href=""><span>Bahasa Indonesia</span></a></li>
+              <li><a href=""><span>Italiano</span></a></li>
+              <li><a href=""><span>日本語</span></a></li>
+              <li><a href=""><span>한국어</span></a></li>
+              <li><a href=""><span>Lietuvių</span></a></li>
+              <li><a href=""><span>Nederlands</span></a></li>
+              <li><a href=""><span>Polski</span></a></li>
+              <li><a href=""><span>Português</span></a></li>
+              <li><a href=""><span>Русский</span></a></li>
+              <li><a href=""><span>Slovenčina</span></a></li>
+              <li><a href=""><span>Српски / srpski</span></a></li>
+              <li><a href=""><span>Svenska</span></a></li>
+              <li><a href=""><span>ไทย</span></a></li>
+              <li><a href=""><span>Türkçe</span></a></li>
+              <li><a href=""><span>Українська</span></a></li>
+              <li><a href=""><span>中文（简体）</span></a></li>
+              <li><a href=""><span>中文（繁體）</span></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div id="tab-content">
+          <div id="content-navbar">
+            <div id="nav-left">
+              <nav class="menu-tabs">
+                <ul>
+                  <li><a href="" class="tabs-select" style="background-color: #ffffff"><span>Main page</span></a></li>
+                  <li><a href="" class="tabs-nosel"><span>Discussion</span></a></li>
+                </ul>
+              </nav>
+            </div>
+            <div id="nav-right">
+              <nav class="menu-tabs">
+                <ul>
+                  <li><a href="" class="tabs-select"><span>Read</span></a></li>
+                  <li><a href="" class="tabs-nosel"><span>View source</span></a></li>
+                  <li><a href="" class="tabs-nosel"><span>View history</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="div-main">
+        <main id="content-main">
+          <h1 id="main-heading">Main page</h1>
+          <div id="content-main-text" class="links">
+            <p>
+              <b>Welcome to the <a href="">ArchWiki</a>: your source for Arch Linux documentation on the web.</b>
+            </p>
+            <p>
+              Visit the <a href="" style="font-weight: bold;">Table of contents</a> for a listing of article categories.
+            </p>
+            <h2>The distribution</h2>
+            <div class="archwiki-main-columns">
+              <dl>
+                <dt><a href="">Arch Linux</a></dt>
+                <dd>Overview of Arch Linux describing what to expect from an Arch Linux system.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Frequently asked questions</a></dt>
+                <dd>Notable questions and facts about the distribution.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Arch compared to other distributions</a></dt>
+                <dd>Summarizes the similarities and differences between Arch and other distributions.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Installation guide</a></dt>
+                <dd>Guide through the process of installing Arch Linux.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">General recommendations</a></dt>
+                <dd>Annotated index of post-installation tutorials and other popular articles.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">List of applications</a></dt>
+                <dd>Categorized presentation of common official and AUR packages.</dd>
+              </dl>
+            </div>
+            <h2>Our community</h2>
+            <div class="archwiki-main-columns">
+              <dl>
+                <dt><a href="">Code of conduct</a></dt>
+                <dd>Guidelines for the Arch community.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Getting involved</a></dt>
+                <dd>Describes various ways Archers can contribute to the Arch community.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">International communities</a></dt>
+                <dd>Collection of links to the Arch Linux communities around the world.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Arch IRC channels</a></dt>
+                <dd>Get together with your fellow Archers for a good chat.</dd>
+              </dl>
+            </div>
+            <h2>Wiki interaction</h2>
+            <div class="archwiki-main-columns">
+              <dl>
+                <dt><a href="">Help:Reading</a></dt>
+                <dd>Find clarifications if you struggle to understand instructions in some articles.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Help:Browsing</a></dt>
+                <dd>How to search the wiki, find related articles and view the wiki offline.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">ArchWiki:Contributing</a></dt>
+                <dd>The starting point for those willing to contribute to the wiki.</dd>
+              </dl>
+              <dl>
+                <dt><a href="">Help:Editing</a></dt>
+                <dd>Tutorial on editing articles and introduction to wiki text syntax.</dd>
+              </dl>
+            </div>
+          </div>
+          <div id="cat-links" class="links">
+            <a id="cat-links-a1" href="">Category:</a>
+            <a href="">English</a>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="divShowLogin">
+      <button id="showLogin" type="button" class="btnLogin" onclick="showLogin()">LOGIN</button>
+    </div>
+    <div style="display: none;" id="loginPage">
+      <h1>Login</h1>
+      <div id="divForm">
+        <form name="form1">
+          <label for="Login">Login</label>
+          <div>
+            <input type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
+          </div>
+          <div style="display: none;" id="invalidEmail">
+            <li class="errorMsg">Email inválido</li>
+          </div>
+          <label for="Senha">Senha</label>
+          <div>
+            <input type="password" minlength="3" id="inputSenha" class="inputLogin" value=""><br><br>
+          </div>
+          <div style="display: none;" id="invalidPw">
+            <li class="errorMsg">A senha deve ter mais de 3 caracteres</li>
+          </div>
+          <button type="button" class="btnLogin" onclick="getLoginFromReqRes()">Get Login</button>
+          <button type="button" class="btnLogin" onclick="register(document.form1.inputLog, document.form1.inputSenha)">Cadastrar</button>
+          <button type="button" class="btnLogin" onclick="login(document.form1.inputLog, document.form1.inputSenha)">Logar</button>
+          <script type="text/javascript" charset="utf-8" src="login_Register.js"></script>
+        </form>
+      </div>
+    </div>
+    <div id="loggedInPage" style="display: none;" >
+      <h1>Buscar Universidades</h1>
+      <label>Buscar:</label>
+      <div>
+        <input type="text" class="inputLogin" id="busca"><br><br>
+        <button type="button" class="btnLogin" onclick="search()">Buscar</button>                      
+        </script>
+      </div>
+    </div>
+    <div style="display: none;" id="resultPage">
+      <div class="form-group">
+        <label class="resultLabel">Nome</label>
+        <li id="Nome" class="classLi"></li>        
+        <label class="resultLabel">País</label>
+        <li id="Pais" class="classLi"></li>
+        <label class="resultLabel">Domínio</label>
+        <li id="Dominio" class="classLi"></li>
+        <label class="resultLabel">Página Web</label>
+        <li id="PaginaWeb" class="classLi"></li>
+      </div>          
+    </div>
+
+    </form>
+    <div id="container-footer">
+      <div id="div-footer">
+        <footer id="footerid">
+          <ul>
+            <li> This page was last edited on 7 June 2021, at 11:05.</li>
+            <li class="links">
+              Content is available under <a href="">GNU Free Documentation License 1.3 or later</a> unless otherwise
+              noted.
+            </li>
+          </ul>
+          <ul id="footer-places">
+            <li class="links"><a href="">Privacy policy</a></li>
+            <li class="links"><a href="">About ArchWiki</a></li>
+            <li class="links"><a href="">Disclaimers</a></li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleSidebar() {
+      let button = document.getElementById("sidebar-button")
+      let sidebar = document.getElementById("sidebar")
+      let divMain = document.getElementById("div-main")
+      let tab = document.getElementById("tab-content")
+
+      if (sidebar.style.display == "none") {
+        sidebar.style.display = "block"
+        divMain.style.marginLeft = "11.5em"
+        tab.style.marginLeft = "11.5em"
+      } else {
+        sidebar.style.display = "none"
+        divMain.style.marginLeft = "0"
+        tab.style.marginLeft = "0"
+
+      }
+    }
+  </script>
