@@ -10,6 +10,7 @@ var usersRouter = require("./routes/users");
 var app = express();
 
 app.use('/public', express.static(__dirname + '/public'))
+app.use('/model', express.static(__dirname + '/model'))
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
