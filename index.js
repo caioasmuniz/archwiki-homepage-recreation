@@ -21,9 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.get('/usersdb', async function(req, res, next) {
-  const users = await Users.find();
-  res.render('usersdb', {users: users});
+app.get('/usersdb', function(req, res, next) {
+  Users.find().then((users) => {
+    res.render('usersdb', {users: users})
+  });
 });
 
 app.use("/", indexRouter);
