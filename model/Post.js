@@ -9,16 +9,18 @@ module.exports = class Post{
     
     static insert(data){
 
-        return client.connect("mongodb+srv://admin:n6vxXNG4oC9LI60P@cluster-trabalho-web.pzrykdc.mongodb.net/?retryWrites=true&w=majority", {
-            useNewUrlParser: true,                
-        }).then((client) => {
-            let db = client.db('projeto3');
-            return db.collection('users').insertOne({                
-                username: data.username,
-                email: data.email,
-                senha: this.hash(data.senha),                
-                publicacoes: 0
+        return client
+          .connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+          })
+          .then((client) => {
+            let db = client.db("projeto3");
+            return db.collection("users").insertOne({
+              username: data.username,
+              email: data.email,
+              senha: this.hash(data.senha),
+              publicacoes: 0,
             });
-        })        
+          });        
     }
 }

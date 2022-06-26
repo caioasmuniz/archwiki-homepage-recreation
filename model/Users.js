@@ -4,12 +4,14 @@ let client = require('mongodb').MongoClient;
 module.exports = class Users { 
     
     static find() {
-        return client.connect("mongodb+srv://admin:n6vxXNG4oC9LI60P@cluster-trabalho-web.pzrykdc.mongodb.net/?retryWrites=true&w=majority", {
-            useNewUrlParser: true,                
-        }).then((client) => {
-            let db = client.db('projeto3');
-            return db.collection('users').find().toArray();
-        })
+        return client
+          .connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+          })
+          .then((client) => {
+            let db = client.db("projeto3");
+            return db.collection("users").find().toArray();
+          });
         
         
         // const uri = process.env.MONGODB_URI;
