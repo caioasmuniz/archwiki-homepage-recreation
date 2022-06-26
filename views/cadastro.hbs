@@ -1,0 +1,30 @@
+<div id="loginPage">
+    <h1>Cadastro</h1>
+    <div id="divForm">
+        <form action="cadastro" method="post" accept-charset="utf-8" name="form1">
+            <label for="username">Username</label>
+            <div>
+              <input type="text" name="username" class="inputLogin" value=""><br><br>
+            </div>
+            <label for="email">Email</label>
+            <div>
+              <input type="text" minlength="4" name="email" class="inputLogin" value=""><br><br>
+            </div>
+            <div style="display: none;" id="invalidEmail">
+              <li class="errorMsg">Email inválido</li>
+            </div>
+            <label for="senha">Senha</label>
+            <div>
+              <input type="password" minlength="3" name="senha" class="inputLogin" value=""><br><br>
+            </div>
+            <div style="display: none;" id="invalidPw">
+              <li class="errorMsg">A senha deve ter mais de 3 caracteres</li>
+            </div>
+            <input type="submit" value="Cadastrar" class="btnLogin">
+
+            {{!-- <button type="button" class="btnLogin" onclick="register(document.form1.inputLog, document.form1.inputSenha)">Cadastrar</button> --}}
+            {{!-- <button type="button" class="btnLogin" onclick="login(document.form1.inputLog, document.form1.inputSenha)">Logar</button> --}}
+            <script type="text/javascript" charset="utf-8" src="/model/login_Register.js"></script>
+        </form>
+    </div>
+</div>

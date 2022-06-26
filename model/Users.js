@@ -23,6 +23,6 @@ module.exports = class Users {
         //     // perform actions on the collection object
         //     client.close();
         // });
-    }   
+    }
 }
   

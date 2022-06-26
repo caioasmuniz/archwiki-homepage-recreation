@@ -13,4 +13,8 @@ router.get('/usersdb', function(req, res, next) {
   });
 });
 
+router.get('/cadastro', function(req, res, next) {
+  res.render('cadastro');  
+});
+
 module.exports = router;
