@@ -12,15 +12,12 @@ module.exports = class Post{
       const re =
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!email.match(re) || email.length < 3) {
-        document.getElementById("invalidEmailCad").style.display = "block";
         error = true;
       }
       if (senha.length < 3) {
-        document.getElementById("invalidPwCad").style.display = "block";
         error = true;
       }
       if(user == null){
-        document.getElementById("invalidUserCad").style.display = "block";
         error = true;
       }
     
