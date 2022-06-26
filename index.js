@@ -3,6 +3,8 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var Post = require('./model/Post');
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -24,6 +26,13 @@ app.use(cookieParser());
 //rotas
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+//post
+app.post('/cadastro', function(req, res, next) {
+  const body = req.body;
+  Post.insert(body);
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
