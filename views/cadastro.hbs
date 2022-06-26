@@ -6,18 +6,21 @@
             <div>
               <input type="text" name="username" class="inputLogin" value=""><br><br>
             </div>
+            <div style="display: none;" id="invalidUserCad">
+              <li class="errorMsg">Usuário inválido</li>
+            </div>
             <label for="email">Email</label>
             <div>
               <input type="text" minlength="4" name="email" class="inputLogin" value=""><br><br>
             </div>
-            <div style="display: none;" id="invalidEmail">
+            <div style="display: none;" id="invalidEmailCad">
               <li class="errorMsg">Email inválido</li>
             </div>
             <label for="senha">Senha</label>
             <div>
               <input type="password" minlength="3" name="senha" class="inputLogin" value=""><br><br>
             </div>
-            <div style="display: none;" id="invalidPw">
+            <div style="display: none;" id="invalidPwCad">
               <li class="errorMsg">A senha deve ter mais de 3 caracteres</li>
             </div>
             <input type="submit" value="Cadastrar" class="btnLogin">
@@ -25,6 +28,7 @@
             {{!-- <button type="button" class="btnLogin" onclick="register(document.form1.inputLog, document.form1.inputSenha)">Cadastrar</button> --}}
             {{!-- <button type="button" class="btnLogin" onclick="login(document.form1.inputLog, document.form1.inputSenha)">Logar</button> --}}
             <script type="text/javascript" charset="utf-8" src="/model/login_Register.js"></script>
+            <script type="text/javascript" charset="utf-8" src="/model/Post.js"></script>
         </form>
     </div>
 </div>
