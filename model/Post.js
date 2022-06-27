@@ -25,7 +25,7 @@ module.exports = class Post{
     }
       
     
-    static insert(data){
+    static insert(data){      
       let error = this.ValidateUserCadastro(data.email, data.senha, data.username);
       if(!error){
         return client
