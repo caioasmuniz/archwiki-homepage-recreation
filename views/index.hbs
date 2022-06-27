@@ -210,24 +210,23 @@
     <div style="display: none;" id="loginPage">
       <h1>Login</h1>
       <div id="divForm">
-        <form name="form1">
-          <label for="Login">Login</label>
+        <form name="form1" method="post" accept-charset="utf-8" action="login">
+          <label for="Username">Login</label>
           <div>
-            <input type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
+            <input name="username" type="text" minlength="4" id="inputLog" class="inputLogin" value=""><br><br>
           </div>
           <div style="display: none;" id="invalidEmail">
             <li class="errorMsg">Email inválido</li>
           </div>
           <label for="Senha">Senha</label>
           <div>
-            <input type="password" minlength="3" id="inputSenha" class="inputLogin" value=""><br><br>
+            <input type="password" name="senha" minlength="3" id="inputSenha" class="inputLogin" value=""><br><br>
           </div>
           <div style="display: none;" id="invalidPw">
             <li class="errorMsg">A senha deve ter mais de 3 caracteres</li>
           </div>
-          <button type="button" class="btnLogin" onclick="getLoginFromReqRes()">Get Login</button>
           <button type="button" class="btnLogin" onclick="window.location = '/cadastro'">Cadastrar</button>
-          <button type="button" class="btnLogin" onclick="login(document.form1.inputLog, document.form1.inputSenha)">Logar</button>
+          <button type="submit" class="btnLogin">Logar</button>
           <script type="text/javascript" charset="utf-8" src="/public/javascripts/login_Register.js"></script>
         </form>
       </div>

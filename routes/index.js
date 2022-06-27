@@ -9,8 +9,10 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/login", function (req, res, next) {
-  Users.find().then((users) => {
-    res.render("usersdb", { users: users });
+  const body = req.body;
+  Users.find(body.username).then((user) => {
+    console.log(user);
+    if (Post.hash(body.senha) == user.senha) res.render("user", { user: user });
   });
 });
 
