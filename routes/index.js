@@ -24,20 +24,23 @@ router.post("/cadastro", function (req, res, next) {
   let isEmail = false;
   let isUser = false;
   Users.find(body.username).then((user) => {    
-    if (user != null)
-      isUser = true;        
-  });
-  Users.findEmail(body.email).then((usermail) => {
-    if (usermail != null)
-      isEmail = true;    
-  })
-  .then(()=>{
-    if(isEmail || isUser)
-      console.log("Email ou usuário existentes!!");   
-    else
-      Post.insert(body);
-      
-    res.redirect("/");
+    if (user != null){
+      isUser = true;
+    }    
+  }).then(()=>{
+    Users.findEmail(body.email).then((usermail) => {
+      if (usermail != null){
+        isEmail = true;
+      }
+    })
+    .then(()=>{
+      if(isEmail || isUser)
+        console.log("Email ou usuário existentes!!");   
+      else
+        Post.insert(body);
+        
+      res.redirect("/");
+    })
   })
 });
 
