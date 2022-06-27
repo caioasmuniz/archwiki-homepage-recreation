@@ -11,7 +11,6 @@ router.get("/", function (req, res, next) {
 router.post("/login", function (req, res, next) {
   const body = req.body;
   Users.find(body.username).then((user) => {
-    console.log(user);
     if (Post.hash(body.senha) == user.senha) res.render("user", { user: user });
   });
 });
