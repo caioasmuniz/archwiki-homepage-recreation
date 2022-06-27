@@ -15,12 +15,6 @@ router.post("/login", function (req, res, next) {
   });
 });
 
-router.get("/usersdb", function (req, res, next) {
-  Users.find().then((users) => {
-    res.render("usersdb", { users: users });
-  });
-});
-
 router.get("/cadastro", function (req, res, next) {
   res.render("cadastro");
 });
