@@ -11,17 +11,16 @@ module.exports = class Users {
         let db = client.db("projeto3");
         return db.collection("users").findOne({ username: user });
       });
-  }
+  } 
 
-  static findUser(user, email) {
+  static findEmail(email) {
     return client
       .connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
       })
       .then((client) => {
         let db = client.db("projeto3");
-        return db.collection("users").findOne({ username: user, email: email });
+        return db.collection("users").findOne({ email: email });
       });
   }
 };
-  
