@@ -12,12 +12,15 @@ module.exports = class Post{
       const re =
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!email.match(re) || email.length < 3) {
+        console.log("Email inválido!!");
         error = true;
       }
       if (senha.length < 3) {
+        console.log("A senha deve ter 6 caracteres no mínimo");
         error = true;
       }
       if(user == null){
+        console.log("Insira um usuário válido");
         error = true;
       }
     

@@ -11,7 +11,6 @@ router.get("/", function (req, res, next) {
 router.post("/login", function (req, res, next) {
   const body = req.body;
   Users.find(body.username).then((user) => {
-    console.log(user.senha);
     if (Post.hash(body.senha) == user.senha) res.render("user", { user: user });
   });
 });
@@ -22,8 +21,7 @@ router.get("/cadastro", function (req, res, next) {
 
 router.post("/cadastro", function (req, res, next) {
   const body = req.body;
-  Users.find(body.username).then((user) => {
-    console.log(user);
+  Users.find(body.username).then((user) => {    
     if(user != null)
         console.log("Email ou usuário existentes!!");
     else
