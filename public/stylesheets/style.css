@@ -545,6 +545,11 @@ html > body #navbar-logo {
   display: column;
 }
 
+#divFormGet{
+  margin-top: 30px;
+  display: column;
+}
+
 .btnLogin{
   background-color: #3366cc;
   color: #fff;

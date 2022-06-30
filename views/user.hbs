@@ -1,10 +1,26 @@
 
-<h1>Users</h1>
-<ul>
-{{#user}}
-    <li>{{username}}</li>
-    <li>{{email}}</li>
+<div id="loginPage">
+    {{#user}}
+        <h1>{{username}}</h1>        
+        <li>{{numPublicacoes}}</li>      
+    <div id="divForm">
+        <form action="posts" method="post" accept-charset="utf-8" name="form1">
+            <label for="publicacoes">Publicações</label>
+            <div>
+              <input type="text" name="publicacoes" class="inputLogin" value=""><br><br>
+            </div>            
+            <input type="submit" value="Postar" class="btnLogin">            
+        </form>
+    </div>    
+    <div id="divFormGet">
+        <form action="posts" method="get" accept-charset="utf-8" name="form1">
+            <label for="busca">Filtrar Publicações</label>
+            <div>
+              <input type="text" name="busca" class="inputLogin" value=""><br><br>
+            </div>            
+            <input type="submit" value="Buscar..." class="btnLogin">            
+        </form>
+    </div>          
     <li>{{publicacoes}}</li>
-{{/user}}
-</ul>
-    
+    {{/user}}
+</div>
