@@ -1,19 +1,19 @@
 
 <div id="loginPage">
     {{#user}}
-        <h1>{{username}}</h1>        
-        <li>{{numPublicacoes}}</li>      
+    <h1>{{username}}</h1>
     <div id="divForm">
-        <form action="posts" method="post" accept-charset="utf-8" name="form1">
+        <form method="post" accept-charset="utf-8" name="form1" action="posts">
             <label for="publicacoes">Publicações</label>
             <div>
-              <input type="text" name="publicacoes" class="inputLogin" value=""><br><br>
+              <input id="inputPost" type="text" name="publicacoes" class="inputLogin" value=""><br><br>
             </div>            
             <input type="submit" value="Postar" class="btnLogin">            
         </form>
+        <script type="text/javascript" charset="utf-8" src="/public/javascripts/searchContent.js"></script>
     </div>    
     <div id="divFormGet">
-        <form action="posts" method="get" accept-charset="utf-8" name="form1">
+        <form action="posts" method="get" accept-charset="utf-8" name="form1" onsubmit="">
             <label for="busca">Filtrar Publicações</label>
             <div>
               <input type="text" name="busca" class="inputLogin" value=""><br><br>
