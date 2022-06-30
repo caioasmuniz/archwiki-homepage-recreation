@@ -1,7 +1,7 @@
 let client = require('mongodb').MongoClient;
 const { createHash } = require('crypto');
 
-module.exports = class Post{
+module.exports = class Cadastro{
 
     static hash(string) {
         return createHash('sha256').update(string).digest('hex');
@@ -41,9 +41,10 @@ module.exports = class Post{
               username: data.username,
               email: data.email,
               senha: this.hash(data.senha),
-              publicacoes: 0,
+              publicacoes: [],
+              numPublicacoes: 0,
             });
           });
       }        
-  }
+    }    
 } 

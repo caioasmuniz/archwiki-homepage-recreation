@@ -1,5 +1,6 @@
 var Users = require('../model/Users')
-var Post = require("../model/Post");
+var Cadastro = require("../model/Cadastro");
+var Posts = require("../model/Posts");
 var express = require("express");
 var router = express.Router();
 
@@ -11,7 +12,7 @@ router.get("/", function (req, res, next) {
 router.post("/login", function (req, res, next) {
   const body = req.body;
   Users.find(body.username).then((user) => {
-    if (Post.hash(body.senha) == user.senha) res.render("user", { user: user });
+    if (Cadastro.hash(body.senha) == user.senha) res.render("user", { user: user });
   });
 });
 
@@ -37,11 +38,24 @@ router.post("/cadastro", function (req, res, next) {
       if(isEmail || isUser)
         console.log("Email ou usuário existentes!!");   
       else
-        Post.insert(body);
+        Cadastro.insert(body);
         
       res.redirect("/");
     })
   })
+});
+
+router.post("/posts", function (req, res, next) {
+  const body = req.body;
+  let pub = 0;
+  let id;   
+  Posts.findNpublic().then((user) => {       
+    pub = user.numPublicacoes +1;
+    id = user._id
+  }).then(()=>{      
+        Posts.postContent(body.publicacoes, pub, id);        
+        res.redirect("/login");
+    })  
 });
 
 module.exports = router;
